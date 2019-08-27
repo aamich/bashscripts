@@ -1,0 +1,33 @@
+head -4 mysampledata.txt
+tail -3 mysampledata.txt
+sort mysampledata.txt
+nl mysampledata.txt  # number lines added displaying the contents
+
+1 Fred apples 20
+2 Susy oranges 5
+
+nl -s '. ' -w 10 mysampledata.txt
+
+1. Fred apples 20
+2. Susy oranges 5
+
+wc -l mysampledata.txt # -l: line, -c char, -w word
+
+cut -f 1 -d ' ' mysampledata.txt
+
+Fred
+Susy
+
+cut -f 1,2 -d ' ' mysampledata.txt
+
+Fred apples
+Susy oranges
+
+sed 's/oranges/bananas/g' mysampledata.txt
+
+Fred apples 20
+Susy bananas 5
+
+uniq mysampledata.txt
+
+tac mysampledata.txt   # reverse 'cat'
