@@ -1,0 +1,50 @@
+egrep=grep -E  # regular expression
+fgrep=grep -F  # fixed string rather than fancy ones
+egrep -n 'mellon' mysampledata.txt  # added line number
+
+3:Mark watermellons 12
+11:Oliver rockmellons 2
+
+egrep -c 'mellon' mysampledata.txt  # count
+2
+
+. (dot) - a single character.
+? - the preceding character matches 0 or 1 times only.
+* - the preceding character matches 0 or more times.
++ - the preceding character matches 1 or more times.
+{n} - the preceding character matches exactly n times.
+{n,m} - the preceding character matches at least n times and not more than m times.
+[agd] - the character is one of those included within the square brackets.
+[^agd] - the character is not one of those included within the square brackets.
+[c-f] - the dash within the square brackets operates as a range. In this case it means either the letters c, d, e or f.
+() - allows us to group several characters to behave as one.
+| (pipe symbol) - the logical OR operation.
+^ - matches the beginning of the line.
+$ - matches the end of the line.
+
+egrep '[aeiou]{2,}' mysampledata.txt
+Robert pears 4
+Lisa peaches 7
+
+egrep '2.+' mysampledata.txt
+Fred apples 20
+
+egrep '2$' mysampledata.txt
+Mark watermellons 12
+Susy oranges 12
+Oliver rockmellons 2
+
+egrep 'or|is|go' mysampledata.txt
+Susy oranges 5
+Terry oranges 9
+Lisa peaches 7
+Susy oranges 12
+Anne mangoes 7
+
+egrep '^[A-K]' mysampledata.txt  # begin with A-K
+Fred apples 20
+Anne mangoes 7
+Greg pineapples 3
+Betty limes 14
+
+
