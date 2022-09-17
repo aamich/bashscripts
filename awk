@@ -44,3 +44,5 @@ FS: field separator character used to divide fields on the input line. default â
 RS: current record separator character. Since, by default, an input line is the input record, the default record separator character is a newline.
 OFS: output field separator, to separate fields when Awk prints them. default blank space. Whenever print has several parameters separated with commas, it will print the value of OFS in between each parameter.
 ORS: output record separator, to separate output lines when Awk prints them. default newline character. print automatically outputs the contents of ORS at the end of whatever it is given to print.
+RSTART: This stores the starting location of the search string/pattern. RSTART is set by invoking the match() function
+RLENGTH: This stores the length of the search string/pattern
