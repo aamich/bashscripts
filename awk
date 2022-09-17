@@ -50,3 +50,25 @@ awk 'match($0, /o/) {print $0 "has \"o\" at " RSTART}' text.txt
 df | awk 'NR==7, NR==11 {print NR, $0}' 
 awk -F':' '{print $1,$7}' /etc/passwd
 awk -F':' 'match($0, /wayne/) {print $1,$7}' /etc/passwd
+
+count.awk
+#! /usr/bin/awk -f
+BEGIN {FS=":"}
+NR==1(next;}
+$3=="M" {print; count++}
+END { print "The number of Ms are ", count}
+
+more_count.awk
+#! /usr/bin/awk -f 
+BEGIN {FS=":"}
+NR==1 {next;}
+$3~/M/ {masc[$2]=$1}
+$3~/F/ {fem[$2]=$1}
+END {
+  print "\nMasculine \n---------------";
+    for(x in masc)
+      {print x "--" masc[x] }
+  print "\nFeminine \n----------------";
+    for(y in fem)
+      {print y "--" fem[y] }
+}
