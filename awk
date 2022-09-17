@@ -46,3 +46,7 @@ OFS: output field separator, to separate fields when Awk prints them. default bl
 ORS: output record separator, to separate output lines when Awk prints them. default newline character. print automatically outputs the contents of ORS at the end of whatever it is given to print.
 RSTART: This stores the starting location of the search string/pattern. RSTART is set by invoking the match() function
 RLENGTH: This stores the length of the search string/pattern
+awk 'match($0, /o/) {print $0 "has \"o\" at " RSTART}' text.txt
+df | awk 'NR==7, NR==11 {print NR, $0}' 
+awk -F':' '{print $1,$7}' /etc/passwd
+awk -F':' 'match($0, /wayne/) {print $1,$7}' /etc/passwd
